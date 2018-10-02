@@ -68,7 +68,7 @@ public class Calculator {
 		print("SUM:" , sum(firstIntArg, secondIntArg));
 		print("SUB:" , this.subtract(firstIntArg, secondIntArg));
 		print("*:" , multiply(firstIntArg, secondIntArg));
-		print("DV:" , divide(firstIntArg,secondIntArg));
+		printDouble("DV:" , divide(firstIntArg,secondIntArg));
 	}
 
 	
@@ -78,6 +78,9 @@ public class Calculator {
 	 * This method prints out computation result.
 	 */
 	void print(String prefix, int result) {
+		System.out.println(prefix + " " + result);
+	}
+	void printDouble(String prefix, double result) {
 		System.out.println(prefix + " " + result);
 	}
 
@@ -90,7 +93,7 @@ public class Calculator {
 	int subtract(int first, int second) {
 		countForAnyCompution++;
 		localCount++;
-		return first + second;
+		return first - second; //first fix
 	}
 
 	int multiply(int first, int second) {
@@ -99,10 +102,10 @@ public class Calculator {
 		return first * second;
 	}
 
-	int divide(int first, int second) {
+	double divide(int first, int second) {
 		countForAnyCompution++;
 		localCount++;
-		return first / second;
+		return (double) first / second;
 	}
 
 	int mod(int first, int second) {
