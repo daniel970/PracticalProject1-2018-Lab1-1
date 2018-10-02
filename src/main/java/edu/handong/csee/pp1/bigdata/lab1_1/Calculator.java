@@ -105,13 +105,12 @@ public class Calculator {
 	double divide(int first, int second) { //changed return value into double
 		countForAnyCompution++;
 		localCount++;
-		if(second == 0) {
+		if(second == 0) { //added new if statement
 			return Double.NaN;
 		}
 		else {
 			return (double) first / second;
 		}
-		
 	}
 
 	int mod(int first, int second) {
